@@ -37,4 +37,7 @@ Route::group(['prefix' => 'admin/article'],function() {
     Route::get('list','ArticleController@index')->name('admin.list.articles');
     Route::get('create','ArticleController@create')->name('admin.create.article');
     Route::post('create','ArticleController@store')->name('admin.store.article');
+    Route::get('edit/{article}','ArticleController@edit')->name('admin.edit.article');
+    Route::post('edit/{article}','ArticleController@update')->name('admin.update.article');
+    Route::delete('delete/{article}','ArticleController@destroy')->name('admin.del.article');
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
@@ -17,7 +18,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('categoryID','DESC')->get();
+        $articles = Article::orderBy('articleID','DESC')->paginate(10);
+        return view('admin.article.index',compact('articles'));
+
         
     }
 
@@ -49,6 +52,7 @@ class ArticleController extends Controller
         $article->userID = Auth::user()->id;
         $article->save();
         $this->storeImages($article);
+        return redirect()->action([ArticleController::class,'index']);
     }
 
     /**
@@ -70,7 +74,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::orderBy('categoryID','DESC')->get();
+        $article = Article::findOrFail($id);
+        return view('admin.article.edit',compact('categories','article'));
     }
 
     /**
@@ -82,7 +88,15 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validateRequest();
+        $article = Article::findOrFail($id);
+        $article->title = $request->title;
+        $article->description = $request->description;
+        $article->categoryID = $request->category;
+        $article->tags = $request->tags;
+        $article->update();
+        $this->storeImages($article);
+        return redirect()->action([ArticleController::class,'index']);
     }
 
     /**
@@ -93,7 +107,10 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        Storage::disk('public')->delete($article->thumbnail);
+        $article->delete();
+        return redirect()->action([ArticleController::class,'index']);
     }
 
     // validate function

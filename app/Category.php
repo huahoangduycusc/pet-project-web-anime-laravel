@@ -21,4 +21,8 @@ class Category extends Model
             1 => 'Inactive'
         ];
     }
+
+    public function articles(){
+        return $this->hasMany(Article::class);
+    }
 }
