@@ -27,9 +27,14 @@ Route::group(['prefix' => 'admin/category'],function() {
     Route::get('list','CategoryController@index')->name('admin.show.category');
     Route::get('create','CategoryController@create')->name('admin.create.category');
     Route::post('create','CategoryController@store')->name('admin.store.category');
-    Route::get('edit/{category}','CategoryController@show')->name('admin.edit.category');
+    Route::get('edit/{category}','CategoryController@edit')->name('admin.edit.category');
     Route::post('edit/{category}','CategoryController@update')->name('admin.save.category');
     Route::delete('delete/{category}','CategoryController@destroy')->name('admin.del.category');
 });
 
 /// ADMIN MANAGE ARTICLE
+Route::group(['prefix' => 'admin/article'],function() {
+    Route::get('list','ArticleController@index')->name('admin.list.articles');
+    Route::get('create','ArticleController@create')->name('admin.create.article');
+    Route::post('create','ArticleController@store')->name('admin.store.article');
+});

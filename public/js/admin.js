@@ -82,3 +82,22 @@ function openCloseDropdown(event) {
 		}
 	}
 }
+// preview image upload
+function previewFile(input) {
+	var file = $("input[type=file]").get(0).files[0];
+	var preThum = document.querySelector('#imgThumbnail');
+	if (file) {
+		var reader = new FileReader();
+
+		reader.onload = function () {
+			preThum.innerHTML = "";
+			var image = new Image();
+			image.width = 500;
+			image.title = file.name;
+			image.src = reader.result;
+			preThum.appendChild(image);
+		}
+
+		reader.readAsDataURL(file);
+	}
+}

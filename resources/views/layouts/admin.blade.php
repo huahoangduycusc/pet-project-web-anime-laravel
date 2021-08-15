@@ -198,11 +198,11 @@
                 </a>
             </li>
             <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
+                <a href="{{ route('admin.list.articles') }}" class="sidebar-nav-link">
                     <div>
                         <i class="fas fa-newspaper"></i>
                     </div>
-                    <span>Morbi</span>
+                    <span>Articles</span>
                 </a>
             </li>
             <li class="sidebar-nav-item">

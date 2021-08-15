@@ -286,6 +286,7 @@ body {
 	padding-top: 75px;
 	background: var(--main-bg-color);
 	transition: margin-left .5s;
+	padding-bottom: 30px;
 }
 
 .sidebar {

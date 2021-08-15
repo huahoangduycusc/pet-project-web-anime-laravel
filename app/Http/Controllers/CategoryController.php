@@ -44,18 +44,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $message = [
-            'categoryName.required' => 'Please, enter name of category',
-            'description.required' => 'Please, enter description',
-            'status.required' => 'Please, choose status'
-        ];
-
-        $data = $this->validate($request,[
-            'categoryName' => 'required|max:120',
-            'description' => 'required',
-            'status' => 'required'
-        ],$message);
-
+        $data = $this->validateRequest();
         Category::create($data);
         return redirect('admin/category/list');
     }
@@ -80,7 +69,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.category.edit',compact('category'));
     }
 
     /**
@@ -92,7 +82,14 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $this->validateRequest();
+        $category = Category::findOrFail($id);
+        $category->categoryName = $request->categoryName;
+        $category->description = $request->description;
+        $category->status = $request->status;
+        $category->update();
+        return back()->with('message','Update category success!');
+
     }
 
     /**
@@ -106,5 +103,22 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         $category->delete();
         return redirect('admin/category/list');
+    }
+
+    // validate form
+    private function validateRequest(){
+        $message = [
+            'categoryName.required' => 'Please, enter name of category',
+            'description.required' => 'Please, enter description',
+            'status.required' => 'Please, choose status'
+        ];
+
+        $data = request()->validate([
+            'categoryName' => 'required|max:120',
+            'description' => 'required',
+            'status' => 'required'
+        ],$message);
+
+        return $data;
     }
 }
