@@ -21,6 +21,8 @@ class CreateArticlesTable extends Migration
             $table->string('thumbnail');
             $table->string('tags');
             $table->unsignedInteger('userID');
+            $table->integer('views')->default(0);
+            $table->integer('priority')->default(0);
             $table->timestamps();
         });
     }

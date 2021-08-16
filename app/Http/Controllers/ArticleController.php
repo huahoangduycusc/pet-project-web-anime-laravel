@@ -50,6 +50,7 @@ class ArticleController extends Controller
         $article->description = $request->description;
         $article->tags = $request->tags;
         $article->userID = Auth::user()->id;
+        $article->priority = $request->priority;
         $article->save();
         $this->storeImages($article);
         return redirect()->action([ArticleController::class,'index']);
@@ -94,6 +95,7 @@ class ArticleController extends Controller
         $article->description = $request->description;
         $article->categoryID = $request->category;
         $article->tags = $request->tags;
+        $article->priority = $request->priority;
         $article->update();
         $this->storeImages($article);
         return redirect()->action([ArticleController::class,'index']);

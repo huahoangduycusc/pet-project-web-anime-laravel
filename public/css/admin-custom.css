@@ -300,3 +300,18 @@ textarea.form-control {
   width: 100%;
 }
 
+.box-input input[type=radio] {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.box-input label {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 600;
+  margin-right: 5px;
+}
+

@@ -252,3 +252,18 @@ textarea.form-control {
     max-width: 250px;
     width: 100%;
 }
+.box-input{
+    input[type="radio"]{
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+    label{
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 600;
+        margin-right: 5px;
+    }
+}
