@@ -72,6 +72,19 @@
                                     </div>
                                 @endif
                             </div>
+                            <div class="box-input">
+                                <p>Priority</p>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="Normal">Normal</label>
+                                        <input type="radio" id="Normal" value="0" name="priority" {{ $article->priority == 0 ? 'checked' : '' }}>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="Pin">Pin</label>
+                                        <input type="radio" id="Pin" value="1" name="priority" {{ $article->priority == 1 ? 'checked' : '' }}>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="space-empty"></div>
                             <div class="box-input">
                                 <button type="submit" class="btn primary-color">Create new category</button>

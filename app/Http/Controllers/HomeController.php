@@ -14,7 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        return view('index',compact('articles'));
+        $articlesPin = Article::pin()->latest()->take(4)->get();
+        $articlesNormal = Article::normal()->get();
+        return view('index',compact('articlesPin','articlesNormal'));
     }
 }

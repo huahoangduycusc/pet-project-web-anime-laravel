@@ -5,17 +5,18 @@
     <div class="container">
         <div class="box">
             <div class="slides-top-news owl-carousel carousel-nav-center">
-                <a href="./article.html" class="slides-top-new-item">
+                @foreach($articlesPin as $article)
+                <a href="{{ $article->url() }}" class="slides-top-new-item">
                     <div class="slide-top-new-thumb">
-                        <img src="./images/article/iatachilg.jpg"
+                        <img src="{{ asset('storage/'.$article->thumbnail) }}"
                             alt="">
                     </div>
                     <div class="slide-top-new-overlay">
                         <div class="news-category">
-                            <span class="badge badge-gray">Anime</span>
+                            <span class="badge badge-gray">{{ $article->category->categoryName }}</span>
                         </div>
                         <div class="news-top-title">
-                            <h2>WThose Who Do Not Understand True Pain Can Never Understand True Peace</h2>
+                            <h2>{{ $article->title }}</h2>
                         </div>
                         <div class="news-top-description">
                             <div class="anime-author">
@@ -23,72 +24,17 @@
                                     <img src="./images/author.png" alt="">
                                 </div>
                                 <div class="anime-author-name">
-                                    <span>Mr. Duy</span>
+                                    <span>{{ $article->user->name }}</span>
                                 </div>
                             </div>
                             <p>-</p>
                             <p class="news-time">January 22, 2021</p>
                             <p>-</p>
-                            <p class="news-view">222 View</p>
+                            <p class="news-view">{{ $article->views }} View</p>
                         </div>
                     </div>
                 </a>
-                <a href="./article.html" class="slides-top-new-item">
-                    <div class="slide-top-new-thumb">
-                        <img src="./images/article/painlg.jpg"
-                            alt="">
-                    </div>
-                    <div class="slide-top-new-overlay">
-                        <div class="news-category">
-                            <span class="badge badge-gray">Manga</span>
-                        </div>
-                        <div class="news-top-title">
-                            <h2>Those Who Do Not Understand True Pain Can Never Understand True Peace</h2>
-                        </div>
-                        <div class="news-top-description">
-                            <div class="anime-author">
-                                <div class="anime-author-avatar">
-                                    <img src="./images/author.png" alt="">
-                                </div>
-                                <div class="anime-author-name">
-                                    <span>Mr. Duy</span>
-                                </div>
-                            </div>
-                            <p>-</p>
-                            <p class="news-time">January 22, 2021</p>
-                            <p>-</p>
-                            <p class="news-view">222 View</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="./article.html" class="slides-top-new-item">
-                    <div class="slide-top-new-thumb">
-                        <img src="./images/article/iatachilg.jpg"
-                            alt="">
-                    </div>
-                    <div class="slide-top-new-overlay">
-                        <div class="news-category">
-                            <span class="badge badge-gray">Life style</span>
-                        </div>
-                        <div class="news-top-title">
-                            <h2>I Want You To Feel Pain, To Think About Pain, To Accept Pain, To Know Pain</h2>
-                        </div>
-                        <div class="news-top-description">
-                            <div class="anime-author">
-                                <div class="anime-author-avatar">
-                                    <img src="./images/author.png" alt="">
-                                </div>
-                                <div class="anime-author-name">
-                                    <span>Mr. Duy</span>
-                                </div>
-                            </div>
-                            <p>-</p>
-                            <p class="news-time">January 22, 2021</p>
-                            <p>-</p>
-                            <p class="news-view">222 View</p>
-                        </div>
-                    </div>
-                </a>
+                @endforeach
             </div>
             <div class="space-empty"></div>
             <div class="list-top-news">
@@ -183,7 +129,7 @@
         <div class="row">
             <div class="col-4 col-md-4 col-sm-12">
                 <div class="widget-title">
-                    <h2 class="widget-title-text">TOP RATED NEWS</h2>
+                    <h2 class="widget-title-text">Must read</h2>
                 </div>
                 <div class="wrapper-recent-post">
                     <div class="wrapper-recent-images">
@@ -354,7 +300,7 @@
                 <div class="widget-title">
                     <h2 class="widget-title-text">LASTEST</h2>
                 </div>
-                @foreach($articles as $article)
+                @foreach($articlesNormal as $article)
                 <div class="wrapper-latest-post">
                     <div class="wrapper-latest-thumb">
                         <a href="./article.html">

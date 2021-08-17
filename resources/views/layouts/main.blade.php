@@ -39,7 +39,7 @@
         <div class="header-container">
             <div class="header-content">
                 <div class="header-logo">
-                    <a href="./index.html">
+                    <a href="{{ route('home') }}">
                         <img src="{{ asset('/images/logo-black.png') }}" class="logo" alt="logo">
                     </a>
                 </div>

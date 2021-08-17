@@ -64,7 +64,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::findorFail($id);
+        return view('client.article.view',compact('article'));
     }
 
     /**

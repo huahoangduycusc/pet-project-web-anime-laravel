@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('index');
 
 Auth::routes();
 
@@ -38,4 +38,9 @@ Route::group(['prefix' => 'admin/article'],function() {
     Route::get('edit/{article}','ArticleController@edit')->name('admin.edit.article');
     Route::post('edit/{article}','ArticleController@update')->name('admin.update.article');
     Route::delete('delete/{article}','ArticleController@destroy')->name('admin.del.article');
+});
+
+/// client article
+Route::prefix('article')->group(function () {
+    Route::get('view/{article}-{slug}','ArticleController@show')->name('view.article');
 });

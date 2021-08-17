@@ -24,6 +24,7 @@
                                 <th>Thumbnail</th>
                                 <th>Category</th>
                                 <th>Author</th>
+                                <th>View</th>
                                 <th>Operation</th>
                             </thead>
                             <tbody>
@@ -33,6 +34,7 @@
                                         <td class="thumbnail"><img src="{{ asset('storage/'.$article->thumbnail) }}"></td>
                                         <td>{{ $article->category->categoryName }}</td>
                                         <td>{{ $article->user->name }}</td>
+                                        <td>{{ $article->views }}</td>
                                         <td>
                                             <a href="{{ route('admin.edit.article',$article->articleID) }}" class="btn-operation warning-color">
                                                 <i class="fas fa-pencil-alt"></i>
