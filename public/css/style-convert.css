@@ -758,6 +758,10 @@ section {
   position: relative;
 }
 
+.wrapper-recent-post .wrapper-recent-images a {
+  display: block;
+}
+
 .wrapper-recent-post .wrapper-recent-images a img {
   width: 170px;
 }
@@ -775,6 +779,10 @@ section {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.wrapper-recent-post .wrapper-recent-des {
+  width: calc(100% - 170px);
 }
 
 .wrapper-recent-post .wrapper-recent-des .wrapper-post-category {

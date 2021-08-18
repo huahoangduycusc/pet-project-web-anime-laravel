@@ -678,6 +678,7 @@ section {
     padding-right: 10px;
     position: relative;
     a {
+      display: block;
       img {
         width: 170px;
       }
@@ -698,6 +699,7 @@ section {
     }
   }
   .wrapper-recent-des {
+    width: calc(100% - 170px);
     .wrapper-post-category {
       margin-bottom: 5px;
       span {

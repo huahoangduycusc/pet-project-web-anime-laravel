@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
-use DataTables;
 
 class CategoryController extends Controller
 {
@@ -58,7 +57,8 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = Category::findOrFail($id);
-        return view('client.category.view',compact('category'));
+        $categories = Category::latest()->get();
+        return view('client.category.view',compact('category','categories'));
     }
 
     /**

@@ -42,7 +42,7 @@ Route::group(['prefix' => 'admin/article'],function() {
 
 /// client category
 Route::prefix('category')->group(function(){
-    Route::get('/view/{category}','CategoryController@show')->name('view.category');
+    Route::get('/view/{category}-{slug}','CategoryController@show')->name('view.category');
 });
 
 /// client article

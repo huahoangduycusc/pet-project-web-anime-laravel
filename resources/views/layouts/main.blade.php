@@ -69,14 +69,14 @@
                             <ul class="sub-menu menu-desktop">
                                @foreach($categories as $category)
                                <li>
-                                   <a href="{{ route('view.category',$category->categoryID) }}">{{ $category->categoryName }}</a>
+                                   <a href="{{ $category->url() }}">{{ $category->categoryName }}</a>
                                </li>
                                @endforeach
                             </ul>
                             <ul class="sub-menu menu-mobile">
                                 @foreach($categories as $category)
                                 <li>
-                                    <a href="">{{ $category->categoryName }}</a>
+                                    <a href="{{ $category->url() }}">{{ $category->categoryName }}</a>
                                 </li>
                                 @endforeach
                             </ul>

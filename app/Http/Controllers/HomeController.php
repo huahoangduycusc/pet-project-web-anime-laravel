@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Category;
+use App\TrackingArticle;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,7 +17,9 @@ class HomeController extends Controller
     public function index()
     {
         $articlesPin = Article::pin()->latest()->take(4)->get();
-        $articlesNormal = Article::normal()->get();
-        return view('index',compact('articlesPin','articlesNormal'));
+        $articlesNormal = Article::normal()->latest()->take(4)->get();
+        $articleToday = TrackingArticle::today()->mostview()->take(5)->get();
+        $categories = Category::latest('categoryID')->get();
+        return view('index',compact('articlesPin','articlesNormal','articleToday','categories'));
     }
 }

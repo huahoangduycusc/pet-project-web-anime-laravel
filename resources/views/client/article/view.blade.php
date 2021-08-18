@@ -45,18 +45,7 @@
                     <p class="news-view">{{ $article->views }} View</p>
                 </div>
                 <p class="anime-text">
-                    his week, the Louvre Museum in Paris was even forced to close for a day because of its
-                    overcrowding problem. (Some union representations for the museum said tourists have stifled
-                    renovation work on the Mona Lisa, crowding them into tight, unworkable spaces.) If you’ve
-                    ever wanted to visit the Eiffel Tower, the Colosseum, or the Statue of Liberty, you should
-                    know now: You’ll likely run into hordes of slow-moving, selfie-stick-carrying tourists at
-                    any popular tourist attraction.
-
-                    While not foolproof, there are a few effective strategies in avoiding tourists while
-                    visiting popular travel hotspots; just be sure to reserve tickets early and make use of your
-                    destination’s city-pass option. If you’re planning ahead, the easiest way to avoid the
-                    hordes of tourists is to visit during the off-season, which will vary depending on your
-                    destination.
+                    {!! html_entity_decode($article->description) !!}
                 </p>
                 <div class="artical-more-info">
                     <div class="article-tags">
