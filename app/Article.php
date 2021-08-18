@@ -28,6 +28,11 @@ class Article extends Model
         return $query->where('priority','0');
     }
 
+    // article contains tag video
+    public function scopeVideo($query){
+        return $query->where('tags','LIKE','%video%');
+    }
+
     ////////////////// relation
 
     // relationship to catgeory

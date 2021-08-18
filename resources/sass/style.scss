@@ -679,8 +679,15 @@ section {
     position: relative;
     a {
       display: block;
+      overflow: hidden;
       img {
         width: 170px;
+        transition: transform 0.3s ease;
+      }
+      &:hover{
+        img{
+          transform: scale(1.2);
+        }
       }
     }
     .rank {

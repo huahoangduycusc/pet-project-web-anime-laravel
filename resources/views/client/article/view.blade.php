@@ -170,15 +170,17 @@
                             <h2 class="widget-title-text">related articles</h2>
                         </div>
                         <div class="slides-weekly-rankings owl-carousel carousel-nav-center">
+                            @foreach($articleToday as $article)
                             <a href="./article.html" class="weekly-ranking-slide">
                                 <div class="weekly-rankings-thumbnail">
                                     <img src="./images/article/konan.jpg" alt="">
                                 </div>
                                 <div class="weekly-rankings-content">
-                                    <h2>Cause every body see what they wanna see</h2>
+                                    <h2>{{ $article->article->title }}</h2>
                                     <span>January 22, 202</span>
                                 </div>
                             </a>
+                            @endforeach
                             <!-- item slide weekly -->
                             <a href="./article.html" class="weekly-ranking-slide">
                                 <div class="weekly-rankings-thumbnail">
@@ -228,132 +230,34 @@
             <!-- col 7 -->
             <div class="col-4 col-md-5 col-sm-12 sticky">
                 <div class="widget-title" style="margin-top: -5px;">
-                    <h2 class="widget-title-text">TOP RATED NEWS</h2>
+                    <h2 class="widget-title-text">HOT TODAY</h2>
                 </div>
+                @foreach($articleToday as $article)
                 <div class="wrapper-recent-post">
                     <div class="wrapper-recent-images">
-                        <a href="./article.html">
-                            <img src="./images/article/kaguya.jpg"
-                                alt="">
+                        <a href="{{ $article->article->url() }}">
+                            <img src="{{ asset('storage/'.$article->article->thumbnail) }}"
+                                alt="{{ $article->article->title }}">
                         </a>
-                        <span class="rank">1</span>
+                        <span class="rank">{{ $loop->iteration }}</span>
                     </div>
                     <div class="wrapper-recent-des">
                         <div class="wrapper-post-category">
-                            <a href="./category.html">
-                                <span>Anime</span>
+                            <a href="{{ $article->article->category->url() }}">
+                                <span>{{ $article->article->category->categoryName }}</span>
                             </a>
                         </div>
                         <div class="wrapper-recent-title">
-                            <a href="./article.html">
-                                <span>Apex Legends is Throwing a Two-Week Fancy Party</span>
+                            <a href="{{ $article->article->url() }}">
+                                <span>{{ $article->article->title }}</span>
                             </a>
                         </div>
                         <div class="wrapper-recent-times">
-                            <i class='bx bx-time-five'></i><span>January 21, 2020</span>
+                            <i class='bx bx-time-five'></i><span>{{ $article->article->convertDate() }}</span>
                         </div>
                     </div>
                 </div>
-                <!-- wrapper item -->
-                <div class="wrapper-recent-post">
-                    <div class="wrapper-recent-images">
-                        <a href="./article.html">
-                            <img src="./images/deidara.jpg"
-                                alt="">
-                        </a>
-                        <span class="rank">2</span>
-                    </div>
-                    <div class="wrapper-recent-des">
-                        <div class="wrapper-post-category">
-                            <a href="./category.html">
-                                <span>Anime</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-title">
-                            <a href="./article.html">
-                                <span>Apex Legends is Throwing a Two-Week Fancy Party</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-times">
-                            <i class='bx bx-time-five'></i><span>January 21, 2020</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- wrapper item -->
-                <div class="wrapper-recent-post">
-                    <div class="wrapper-recent-images">
-                        <a href="./article.html">
-                            <img src="./images/article/kimimaro.jpg"
-                                alt="">
-                        </a>
-                        <span class="rank">3</span>
-                    </div>
-                    <div class="wrapper-recent-des">
-                        <div class="wrapper-post-category">
-                            <a href="./category.html">
-                                <span>Anime</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-title">
-                            <a href="./article.html">
-                                <span>Apex Legends is Throwing a Two-Week Fancy Party</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-times">
-                            <i class='bx bx-time-five'></i><span>January 21, 2020</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- wrapper item -->
-                <div class="wrapper-recent-post">
-                    <div class="wrapper-recent-images">
-                        <a href="./article.html">
-                            <img src="./images/article/sasori.jpg"
-                                alt="">
-                        </a>
-                        <span class="rank">4</span>
-                    </div>
-                    <div class="wrapper-recent-des">
-                        <div class="wrapper-post-category">
-                            <a href="./category.html">
-                                <span>Anime</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-title">
-                            <a href="./article.html">
-                                <span>Apex Legends is Throwing a Two-Week Fancy Party</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-times">
-                            <i class='bx bx-time-five'></i><span>January 21, 2020</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- wrapper item -->
-                <div class="wrapper-recent-post">
-                    <div class="wrapper-recent-images">
-                        <a href="./article.html">
-                            <img src="./images/article/itachi.jpg"
-                                alt="">
-                        </a>
-                        <span class="rank">5</span>
-                    </div>
-                    <div class="wrapper-recent-des">
-                        <div class="wrapper-post-category">
-                            <a href="./category.html">
-                                <span>Anime</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-title">
-                            <a href="./article.html">
-                                <span>Apex Legends is Throwing a Two-Week Fancy Party</span>
-                            </a>
-                        </div>
-                        <div class="wrapper-recent-times">
-                            <i class='bx bx-time-five'></i><span>January 21, 2020</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!-- wrapper item -->
                 <div class="widget-title">
                     <h2 class="widget-title-text">Categories</h2>

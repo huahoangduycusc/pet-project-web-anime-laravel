@@ -66,6 +66,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::findorFail($id);
+        $articleToday = TrackingArticle::today()->mostview()->take(5)->get(); // article most view today
         if($article){
             $tracking = TrackingArticle::where('articleID',$article->articleID)->whereDate('created_at','=',date("Y-m-d"))->first();
             if(empty($tracking)){
@@ -80,7 +81,7 @@ class ArticleController extends Controller
                 $tracking->update();
             }
         }
-        return view('client.article.view',compact('article'));
+        return view('client.article.view',compact('article','articleToday'));
     }
 
     /**

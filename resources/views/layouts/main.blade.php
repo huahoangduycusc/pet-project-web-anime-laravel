@@ -114,7 +114,7 @@
                     <div class="row">
                         <div class="col-3 col-md-6 col-sm-12 mr-b-10">
                             <div class="footer-header">
-                                <img src="./images/logo-white.png" alt="" style="height: 45px;">
+                                <img src="{{ asset('/images/logo-white.png') }}" alt="" style="height: 45px;">
                             </div>
                         </div>
                         <div class="col-3 col-md-6 col-sm-12 mr-b-10">

@@ -760,10 +760,16 @@ section {
 
 .wrapper-recent-post .wrapper-recent-images a {
   display: block;
+  overflow: hidden;
 }
 
 .wrapper-recent-post .wrapper-recent-images a img {
   width: 170px;
+  transition: transform 0.3s ease;
+}
+
+.wrapper-recent-post .wrapper-recent-images a:hover img {
+  transform: scale(1.2);
 }
 
 .wrapper-recent-post .wrapper-recent-images .rank {

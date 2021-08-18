@@ -230,149 +230,44 @@
                 <h2 class="widget-title-text light-text">Video</h2>
             </div>
             <div class="slides-top-news owl-carousel carousel-nav-center">
-                <a href="./article.html" class="slides-top-new-item">
+                @foreach($articleVideoPin as $video)
+                <a href="{{ $video->url() }}" class="slides-top-new-item">
                     <div class="slide-top-new-thumb">
-                        <img src="./images/sasuke.jpg"
+                        <img src="{{ asset('storage/'.$video->thumbnail) }}"
                             alt="">
                     </div>
                     <div class="slide-top-new-overlay">
                         <div class="news-view-top">
-                            <span class="badge badge-gray">12k Views</span>
+                            <span class="badge badge-gray">{{ $video->views }} Views</span>
                         </div>
                         <div class="news-top-title">
-                            <h2>Love Breeds Sacrifice, Which In Turn Breeds Hatred. Then You Can Know Pain</h2>
+                            <h2>{{ $video->title }}</h2>
                         </div>
                         <div class="news-top-description">
-                            <p class="news-time">January 22, 2021</p>
+                            <p class="news-time">{{ $article->convertDate() }}</p>
                         </div>
                     </div>
                 </a>
-                <a href="./article.html" class="slides-top-new-item">
-                    <div class="slide-top-new-thumb">
-                        <img src="./images/sasuke.jpg"
-                            alt="">
-                    </div>
-                    <div class="slide-top-new-overlay">
-                        <div class="news-view-top">
-                            <span class="badge badge-gray">12k Views</span>
-                        </div>
-                        <div class="news-top-title">
-                            <h2>Love Breeds Sacrifice, Which In Turn Breeds Hatred. Then You Can Know Pain</h2>
-                        </div>
-                        <div class="news-top-description">
-                            <p class="news-time">January 22, 2021</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="./article.html" class="slides-top-new-item">
-                    <div class="slide-top-new-thumb">
-                        <img src="./images/sasuke.jpg"
-                            alt="">
-                    </div>
-                    <div class="slide-top-new-overlay">
-                        <div class="news-view-top">
-                            <span class="badge badge-gray">12k Views</span>
-                        </div>
-                        <div class="news-top-title">
-                            <h2>Love Breeds Sacrifice, Which In Turn Breeds Hatred. Then You Can Know Pain</h2>
-                        </div>
-                        <div class="news-top-description">
-                            <p class="news-time">January 22, 2021</p>
-                        </div>
-                    </div>
-                </a>
+                @endforeach
             </div>
             <!-- end slide video large -->
             <div class="slides-video-news owl-carousel carousel-nav-center">
-                <a href="./article.html" class="slide-video-sm">
+                @foreach($articleVideo as $video)
+                <a href="{{ $video->url() }}" class="slide-video-sm">
                     <div class="slide-video-image">
-                        <img src="./images/article/BeFunky-collage.jpg"
+                        <img src="{{ asset('storage/'.$video->thumbnail) }}"
                             alt="">
                         <div class="slide-video-view">
-                            <span>12k Views</span>
+                            <span>{{ $video->views }} Views</span>
                         </div>
                         <div class="slide-video-info">
                             <div class="slide-video-title">
-                                <span>English today is not an art to be mastered</span>
+                                <span>{{ $video->title }}</span>
                             </div>
                         </div>
                     </div>
                 </a>
-                <!-- slide video item -->
-                <a href="./article.html" class="slide-video-sm">
-                    <div class="slide-video-image">
-                        <img src="./images/article/itachi.jpg"
-                            alt="">
-                        <div class="slide-video-view">
-                            <span>12k Views</span>
-                        </div>
-                        <div class="slide-video-info">
-                            <div class="slide-video-title">
-                                <span>English today is not an art to be mastered</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- slide video item -->
-                <a href="./article.html" class="slide-video-sm">
-                    <div class="slide-video-image">
-                        <img src="./images/article/sasori.jpg"
-                            alt="">
-                        <div class="slide-video-view">
-                            <span>12k Views</span>
-                        </div>
-                        <div class="slide-video-info">
-                            <div class="slide-video-title">
-                                <span>English today is not an art to be mastered</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- slide video item -->
-                <a href="./article.html" class="slide-video-sm">
-                    <div class="slide-video-image">
-                        <img src="./images/article/paind.jpg"
-                            alt="">
-                        <div class="slide-video-view">
-                            <span>12k Views</span>
-                        </div>
-                        <div class="slide-video-info">
-                            <div class="slide-video-title">
-                                <span>English today is not an art to be mastered</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- slide video item -->
-                <a href="./article.html" class="slide-video-sm">
-                    <div class="slide-video-image">
-                        <img src="./images/article/sasuke.jpg"
-                            alt="">
-                        <div class="slide-video-view">
-                            <span>12k Views</span>
-                        </div>
-                        <div class="slide-video-info">
-                            <div class="slide-video-title">
-                                <span>English today is not an art to be mastered</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <!-- slide video item -->
-                <a href="./article.html" class="slide-video-sm">
-                    <div class="slide-video-image">
-                        <img src="./images/article/kimimaro.jpg"
-                            alt="">
-                        <div class="slide-video-view">
-                            <span>12k Views</span>
-                        </div>
-                        <div class="slide-video-info">
-                            <div class="slide-video-title">
-                                <span>English today is not an art to be mastered</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                @endforeach
                 <!-- slide video item -->
             </div>
         </div>
@@ -386,55 +281,17 @@
                 <h2 class="widget-title-text">weekly rankings</h2>
             </div>
             <div class="slides-weekly-rankings owl-carousel carousel-nav-center">
-                <a href="./article.html" class="weekly-ranking-slide">
+                @foreach($articleWeek as $article)
+                <a href="{{ $article->article->url() }}" class="weekly-ranking-slide">
                     <div class="weekly-rankings-thumbnail">
-                        <img src="./images/article/kaguya.jpg" alt="">
+                        <img src="{{ asset('storage/'.$article->article->thumbnail) }}" alt="">
                     </div>
                     <div class="weekly-rankings-content">
-                        <h2>Cause every body see what they wanna see</h2>
-                        <span>January 22, 202</span>
+                        <h2>{{ $article->article->title }}</h2>
+                        <span>{{ $article->article->convertDate() }}</span>
                     </div>
                 </a>
-                <!-- item slide weekly -->
-                <a href="./article.html" class="weekly-ranking-slide">
-                    <div class="weekly-rankings-thumbnail">
-                        <img src="./images/itachi.jpg" alt="">
-                    </div>
-                    <div class="weekly-rankings-content">
-                        <h2>Cause every body see what they wanna see</h2>
-                        <span>January 22, 202</span>
-                    </div>
-                </a>
-                <!-- item slide weekly -->
-                <a href="./article.html" class="weekly-ranking-slide">
-                    <div class="weekly-rankings-thumbnail">
-                        <img src="./images/nagato.jpg" alt="">
-                    </div>
-                    <div class="weekly-rankings-content">
-                        <h2>Cause every body see what they wanna see</h2>
-                        <span>January 22, 202</span>
-                    </div>
-                </a>
-                <!-- item slide weekly -->
-                <a href="./article.html" class="weekly-ranking-slide">
-                    <div class="weekly-rankings-thumbnail">
-                        <img src="./images/sasuke.jpg" alt="">
-                    </div>
-                    <div class="weekly-rankings-content">
-                        <h2>Cause every body see what they wanna see</h2>
-                        <span>January 22, 202</span>
-                    </div>
-                </a>
-                <!-- item slide weekly -->
-                <a href="./article.html" class="weekly-ranking-slide">
-                    <div class="weekly-rankings-thumbnail">
-                        <img src="./images/deidara.jpg" alt="">
-                    </div>
-                    <div class="weekly-rankings-content">
-                        <h2>Cause every body see what they wanna see</h2>
-                        <span>January 22, 202</span>
-                    </div>
-                </a>
+                @endforeach
                 <!-- item slide weekly -->
             </div>
         </div>
@@ -447,56 +304,17 @@
             <h2 class="widget-title-text">monthly rankings</h2>
         </div>
         <div class="slides-weekly-rankings owl-carousel carousel-nav-center">
-            <a href="./article.html" class="weekly-ranking-slide">
+            @foreach($articleMonth as $article)
+            <a href="{{ $article->article->url() }}" class="weekly-ranking-slide">
                 <div class="weekly-rankings-thumbnail">
-                    <img src="./images/article/konan.jpg" alt="">
+                    <img src="{{ asset('storage/'.$article->article->thumbnail) }}" alt="">
                 </div>
                 <div class="weekly-rankings-content">
-                    <h2>Cause every body see what they wanna see</h2>
-                    <span>January 22, 202</span>
+                    <h2>{{ $article->article->title }}</h2>
+                    <span>{{ $article->article->convertDate() }}</span>
                 </div>
             </a>
-            <!-- item slide weekly -->
-            <a href="./article.html" class="weekly-ranking-slide">
-                <div class="weekly-rankings-thumbnail">
-                    <img src="./images/itachi.jpg" alt="">
-                </div>
-                <div class="weekly-rankings-content">
-                    <h2>Cause every body see what they wanna see</h2>
-                    <span>January 22, 202</span>
-                </div>
-            </a>
-            <!-- item slide weekly -->
-            <a href="./article.html" class="weekly-ranking-slide">
-                <div class="weekly-rankings-thumbnail">
-                    <img src="./images/nagato.jpg" alt="">
-                </div>
-                <div class="weekly-rankings-content">
-                    <h2>Cause every body see what they wanna see</h2>
-                    <span>January 22, 202</span>
-                </div>
-            </a>
-            <!-- item slide weekly -->
-            <a href="./article.html" class="weekly-ranking-slide">
-                <div class="weekly-rankings-thumbnail">
-                    <img src="./images/sasuke.jpg" alt="">
-                </div>
-                <div class="weekly-rankings-content">
-                    <h2>Cause every body see what they wanna see</h2>
-                    <span>January 22, 202</span>
-                </div>
-            </a>
-            <!-- item slide weekly -->
-            <a href="./article.html" class="weekly-ranking-slide">
-                <div class="weekly-rankings-thumbnail">
-                    <img src="./images/deidara.jpg" alt="">
-                </div>
-                <div class="weekly-rankings-content">
-                    <h2>Cause every body see what they wanna see</h2>
-                    <span>January 22, 202</span>
-                </div>
-            </a>
-            <!-- item slide weekly -->
+            @endforeach
         </div>
     </div>
 </div>
