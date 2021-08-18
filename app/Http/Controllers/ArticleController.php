@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Category;
+use App\TrackingArticle;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -65,6 +66,20 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::findorFail($id);
+        if($article){
+            $tracking = TrackingArticle::where('articleID',$article->articleID)->whereDate('created_at','=',date("Y-m-d"))->first();
+            if(empty($tracking)){
+                $objTracking = new TrackingArticle([
+                    'articleID' => $article->articleID,
+                    'views' => 1,
+                ]);
+                $objTracking->save();
+            }
+            else{
+                $tracking->views = $tracking->views+1;
+                $tracking->update();
+            }
+        }
         return view('client.article.view',compact('article'));
     }
 

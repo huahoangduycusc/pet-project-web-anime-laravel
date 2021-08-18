@@ -84,7 +84,7 @@ textarea.form-control {
 }
 
 .table td {
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .table td.thumbnail img {

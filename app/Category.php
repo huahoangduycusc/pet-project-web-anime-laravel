@@ -11,6 +11,10 @@ class Category extends Model
     protected $guarded = [];
     protected $primaryKey = 'categoryID';
     
+    public function scopeLatest($query){
+        return $query->orderBy('categoryID','DESC');
+    }
+
     public function getStatusAttribute($attribute){
         return $this->statusOptions()[$attribute];
     }

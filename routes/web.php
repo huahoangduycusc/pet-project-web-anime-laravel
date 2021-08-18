@@ -40,6 +40,11 @@ Route::group(['prefix' => 'admin/article'],function() {
     Route::delete('delete/{article}','ArticleController@destroy')->name('admin.del.article');
 });
 
+/// client category
+Route::prefix('category')->group(function(){
+    Route::get('/view/{category}','CategoryController@show')->name('view.category');
+});
+
 /// client article
 Route::prefix('article')->group(function () {
     Route::get('view/{article}-{slug}','ArticleController@show')->name('view.article');

@@ -77,7 +77,7 @@
                                 <div class="row">
                                     <div class="col-6">
                                         <label for="Normal">Normal</label>
-                                        <input type="radio" id="Normal" value="0" name="priority" selected>
+                                        <input type="radio" id="Normal" value="0" name="priority" checked>
                                     </div>
                                     <div class="col-6">
                                         <label for="Pin">Pin</label>

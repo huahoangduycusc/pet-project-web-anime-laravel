@@ -328,7 +328,7 @@ header {
             position: relative;
             transition: all 0.3s ease;
             &::before {
-              transition: transform 0.3s ease;
+              transition: transform 0.6s ease;
               position: absolute;
               content: "";
               width: 100%;
@@ -337,7 +337,7 @@ header {
               background-color: $hover-color;
             }
             &::after {
-              transition: transform 0.3s ease;
+              transition: transform 0.6s ease;
               position: absolute;
               content: "";
               width: 100%;

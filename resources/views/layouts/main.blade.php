@@ -47,7 +47,7 @@
                 <nav class="nav-container">
                     <div class="header-logo-mobile">
                         <a href="./index.html">
-                            <img src="./images/logo-black.png" class="logo" alt="logo">
+                            <img src="{{ asset('/images/logo-black.png') }}" class="logo" alt="logo">
                         </a>
                     </div>
                     <ul class="nav-menu">
@@ -67,16 +67,18 @@
                                 <i class='bx bx-chevron-down'></i>
                             </a>
                             <ul class="sub-menu menu-desktop">
-                                <li><a href="./category.html">Manga</a></li>
-                                <li><a href="./category.html">Cosplay</a></li>
-                                <li><a href="./category.html">Movie</a></li>
-                                <li><a href="./category.html">Fan</a></li>
+                               @foreach($categories as $category)
+                               <li>
+                                   <a href="{{ route('view.category',$category->categoryID) }}">{{ $category->categoryName }}</a>
+                               </li>
+                               @endforeach
                             </ul>
                             <ul class="sub-menu menu-mobile">
-                                <li><a href="./category.html">Manga</a></li>
-                                <li><a href="./category.html">Cosplay</a></li>
-                                <li><a href="./category.html">Movie</a></li>
-                                <li><a href="./category.html">Fan</a></li>
+                                @foreach($categories as $category)
+                                <li>
+                                    <a href="">{{ $category->categoryName }}</a>
+                                </li>
+                                @endforeach
                             </ul>
                         </li>
                         <li class="nav-menu-item">

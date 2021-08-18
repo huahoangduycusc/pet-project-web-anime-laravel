@@ -28,7 +28,12 @@
                                 </div>
                             </div>
                             <p>-</p>
-                            <p class="news-time">January 22, 2021</p>
+                            <p class="news-time">
+                                @php
+                                $date = date('F j, Y',strtotime($article->created_at));
+                                echo $date;
+                                @endphp
+                            </p>
                             <p>-</p>
                             <p class="news-view">{{ $article->views }} View</p>
                         </div>
@@ -303,14 +308,14 @@
                 @foreach($articlesNormal as $article)
                 <div class="wrapper-latest-post">
                     <div class="wrapper-latest-thumb">
-                        <a href="./article.html">
+                        <a href="{{ $article->url() }}">
                             <img src="{{ asset('storage/'.$article->thumbnail) }}"
                                 alt="">
                         </a>
                     </div>
                     <div class="wrapper-latest-des">
                         <div class="wrapper-latest-title">
-                            <a href="./article.html">
+                            <a href="{{ $article->url() }}">
                                 <h2>{{ $article->title }}</h2>
                             </a>
                         </div>
