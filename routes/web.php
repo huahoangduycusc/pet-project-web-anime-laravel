@@ -48,4 +48,5 @@ Route::prefix('category')->group(function(){
 /// client article
 Route::prefix('article')->group(function () {
     Route::get('view/{article}-{slug}','ArticleController@show')->name('view.article');
+    Route::get('search','ArticleController@search')->name('search.article');
 });

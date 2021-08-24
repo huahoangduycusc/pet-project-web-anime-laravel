@@ -25,9 +25,10 @@
     <div class="search-overlay">
         <div class="search-container">
             <div class="form-search">
-                <form action="./search.html" method="get">
+                <form action="{{ route('search.article') }}" method="get">
+                    @csrf
                     <div class="form-input-search">
-                        <input type="text" name="" id="" placeholder="What are you searching for?">
+                        <input type="text" name="s" id="s" placeholder="What are you searching for?">
                         <button type="submit"><i class='bx bx-search'></i></button>
                     </div>
                 </form>

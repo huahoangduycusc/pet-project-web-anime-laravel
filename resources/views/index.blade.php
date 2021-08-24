@@ -44,81 +44,25 @@
             <div class="space-empty"></div>
             <div class="list-top-news">
                 <div class="row">
+                    @foreach($articlePinSmall as $article)
                     <div class="col-6 col-sm-12">
                         <div class="box-item">
                             <div class="box-thumb">
-                                <a href="./article.html"><img
-                                        src="./images/article/konan.jpg"
+                                <a href="{{ $article->url() }}"><img
+                                        src="{{ asset('storage/'.$article->thumbnail) }}"
                                         alt=""></a>
                             </div>
                             <div class="box-description">
-                                <div class="box-title"><a href="./article.html">I Want You To Feel Pain, To Think About Pain, To Accept Pain, To Know Pain
-                                        Trailer</a></div>
+                                <div class="box-title"><a href="{{ $article->url() }}">{{ $article->title }}</a></div>
                                 <div class="box-more">
-                                    <p class="news-time">January 22, 2021</p>
+                                    <p class="news-time">{{ $article->convertDate() }}</p>
                                     <p>-</p>
-                                    <p class="news-view">222 View</p>
+                                    <p class="news-view">{{ $article->views }} View</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- item -->
-                    <div class="col-6 col-sm-12">
-                        <div class="box-item">
-                            <div class="box-thumb">
-                                <a href="./article.html"><img
-                                        src="./images/article/BeFunky-collage.jpg"
-                                        alt=""></a>
-                            </div>
-                            <div class="box-description">
-                                <div class="box-title"><a href="./article.html">Kakarot Releases on Friday, so Here’s a Launch
-                                        Trailer</a></div>
-                                <div class="box-more">
-                                    <p class="news-time">January 22, 2021</p>
-                                    <p>-</p>
-                                    <p class="news-view">222 View</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- item -->
-                    <div class="col-6 col-sm-12">
-                        <div class="box-item">
-                            <div class="box-thumb">
-                                <a href="./article.html"><img
-                                        src="./images/article/kimimaro.jpg"
-                                        alt=""></a>
-                            </div>
-                            <div class="box-description">
-                                <div class="box-title"><a href="./article.html">Kakarot Releases on Friday, so Here’s a Launch
-                                        Trailer</a></div>
-                                <div class="box-more">
-                                    <p class="news-time">January 22, 2021</p>
-                                    <p>-</p>
-                                    <p class="news-view">222 View</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- item -->
-                    <div class="col-6 col-sm-12">
-                        <div class="box-item">
-                            <div class="box-thumb">
-                                <a href="./article.html"><img
-                                        src="./images/article/kaguya.jpg"
-                                        alt=""></a>
-                            </div>
-                            <div class="box-description">
-                                <div class="box-title"><a href="./article.html">Kakarot Releases on Friday, so Here’s a Launch
-                                        Trailer</a></div>
-                                <div class="box-more">
-                                    <p class="news-time">January 22, 2021</p>
-                                    <p>-</p>
-                                    <p class="news-view">222 View</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                     <!-- item -->
                 </div>
             </div>

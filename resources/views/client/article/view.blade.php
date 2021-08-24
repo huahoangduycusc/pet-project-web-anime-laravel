@@ -170,57 +170,17 @@
                             <h2 class="widget-title-text">related articles</h2>
                         </div>
                         <div class="slides-weekly-rankings owl-carousel carousel-nav-center">
-                            @foreach($articleToday as $article)
-                            <a href="./article.html" class="weekly-ranking-slide">
+                            @foreach($articleRelated as $article)
+                            <a href="{{ $article->url() }}" class="weekly-ranking-slide">
                                 <div class="weekly-rankings-thumbnail">
-                                    <img src="./images/article/konan.jpg" alt="">
+                                    <img src="{{ asset('storage/'.$article->thumbnail) }}" alt="">
                                 </div>
                                 <div class="weekly-rankings-content">
-                                    <h2>{{ $article->article->title }}</h2>
-                                    <span>January 22, 202</span>
+                                    <h2>{{ $article->title }}</h2>
+                                    <span>{{ $article->convertDate() }}</span>
                                 </div>
                             </a>
                             @endforeach
-                            <!-- item slide weekly -->
-                            <a href="./article.html" class="weekly-ranking-slide">
-                                <div class="weekly-rankings-thumbnail">
-                                    <img src="./images/itachi.jpg" alt="">
-                                </div>
-                                <div class="weekly-rankings-content">
-                                    <h2>Cause every body see what they wanna see</h2>
-                                    <span>January 22, 202</span>
-                                </div>
-                            </a>
-                            <!-- item slide weekly -->
-                            <a href="./article.html" class="weekly-ranking-slide">
-                                <div class="weekly-rankings-thumbnail">
-                                    <img src="./images/nagato.jpg" alt="">
-                                </div>
-                                <div class="weekly-rankings-content">
-                                    <h2>Cause every body see what they wanna see</h2>
-                                    <span>January 22, 202</span>
-                                </div>
-                            </a>
-                            <!-- item slide weekly -->
-                            <a href="./article.html" class="weekly-ranking-slide">
-                                <div class="weekly-rankings-thumbnail">
-                                    <img src="./images/sasuke.jpg" alt="">
-                                </div>
-                                <div class="weekly-rankings-content">
-                                    <h2>Cause every body see what they wanna see</h2>
-                                    <span>January 22, 202</span>
-                                </div>
-                            </a>
-                            <!-- item slide weekly -->
-                            <a href="./article.html" class="weekly-ranking-slide">
-                                <div class="weekly-rankings-thumbnail">
-                                    <img src="./images/deidara.jpg" alt="">
-                                </div>
-                                <div class="weekly-rankings-content">
-                                    <h2>Cause every body see what they wanna see</h2>
-                                    <span>January 22, 202</span>
-                                </div>
-                            </a>
                             <!-- item slide weekly -->
                         </div>
                     </div>

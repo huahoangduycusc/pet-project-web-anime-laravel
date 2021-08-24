@@ -17,6 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $articlesPin = Article::pin()->latest()->take(4)->get();
+        $articlePinSmall = Article::pin()->latest()->take(4)->skip(4)->get();
         $articlesNormal = Article::normal()->latest()->take(4)->get();
         $articleVideoPin = Article::video()->latest()->take(4)->get();
         $articleVideo = Article::video()->latest()->take(10)->get();
@@ -31,6 +32,6 @@ class HomeController extends Controller
         ->selectRaw('articleID, sum(views)')->get();
         $categories = Category::latest('categoryID')->get();
         return view('index',
-        compact('articlesPin','articlesNormal','articleToday','categories','articleWeek','articleMonth','articleVideoPin','articleVideo'));
+        compact('articlesPin','articlePinSmall','articlesNormal','articleToday','categories','articleWeek','articleMonth','articleVideoPin','articleVideo'));
     }
 }

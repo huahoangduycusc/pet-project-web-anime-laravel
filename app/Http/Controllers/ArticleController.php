@@ -67,6 +67,7 @@ class ArticleController extends Controller
     {
         $article = Article::findorFail($id);
         $articleToday = TrackingArticle::today()->mostview()->take(5)->get(); // article most view today
+        $articleRelated = Article::where('categoryID',$article->categoryID)->where('articleID','!=',$article->articleID)->get();
         if($article){
             $tracking = TrackingArticle::where('articleID',$article->articleID)->whereDate('created_at','=',date("Y-m-d"))->first();
             if(empty($tracking)){
@@ -81,7 +82,7 @@ class ArticleController extends Controller
                 $tracking->update();
             }
         }
-        return view('client.article.view',compact('article','articleToday'));
+        return view('client.article.view',compact('article','articleToday','articleRelated'));
     }
 
     /**
@@ -130,6 +131,12 @@ class ArticleController extends Controller
         Storage::disk('public')->delete($article->thumbnail);
         $article->delete();
         return redirect()->action([ArticleController::class,'index']);
+    }
+
+    // find article
+    public function search(Request $request){
+        $articles = Article::where('title','like','%'.$request->s.'%')->get();
+        return view('client.article.search',compact('articles'));
     }
 
     // validate function
