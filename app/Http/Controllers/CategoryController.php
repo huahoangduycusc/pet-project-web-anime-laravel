@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\TrackingArticle;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -58,7 +59,8 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         $categories = Category::latest()->get();
-        return view('client.category.view',compact('category','categories'));
+        $articleToday = TrackingArticle::today()->mostview()->take(5)->get(); // article most view today
+        return view('client.category.view',compact('category','categories','articleToday'));
     }
 
     /**

@@ -180,7 +180,7 @@
     <div class="sidebar">
         <ul class="sidebar-nav">
             <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
+                <a href="#" class="sidebar-nav-link {{ request()->is('*dashboard*') ? 'active' : '' }}">
                     <div>
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
@@ -190,7 +190,7 @@
                 </a>
             </li>
             <li class="sidebar-nav-item">
-                <a href="{{ route('admin.show.category') }}" class="sidebar-nav-link active">
+                <a href="{{ route('admin.show.category') }}" class="sidebar-nav-link {{ request()->is('*category*') ? 'active' : '' }}">
                     <div>
                         <i class="fab fa-accusoft"></i>
                     </div>
@@ -198,7 +198,7 @@
                 </a>
             </li>
             <li class="sidebar-nav-item">
-                <a href="{{ route('admin.list.articles') }}" class="sidebar-nav-link">
+                <a href="{{ route('admin.list.articles') }}" class="sidebar-nav-link {{ request()->is('*article*') ? 'active' : '' }}">
                     <div>
                         <i class="fas fa-newspaper"></i>
                     </div>
@@ -206,67 +206,11 @@
                 </a>
             </li>
             <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
+                <a href="{{ route('admin.list.account') }}" class="sidebar-nav-link {{ request()->is('*account*') ? 'active' : '' }}">
                     <div>
-                        <i class="fas fa-spinner"></i>
+                        <i class="fas fa-user"></i>
                     </div>
-                    <span>Praesent</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <span>Pellentesque</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-bug"></i>
-                    </div>
-                    <span>Morbi</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <span>Praesent</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <span>Pellentesque</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-adjust"></i>
-                    </div>
-                    <span>Morbi</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
-                    <div>
-                        <i class="fab fa-algolia"></i>
-                    </div>
-                    <span>Praesent</span>
-                </a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#" class="sidebar-nav-link">
-                    <div>
-                        <i class="fas fa-audio-description"></i>
-                    </div>
-                    <span>Pellentesque</span>
+                    <span>Account</span>
                 </a>
             </li>
         </ul>

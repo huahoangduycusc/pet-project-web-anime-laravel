@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('js/tagify.css') }}">
     <div class="body-content">
         <div class="function-title">
-            <h2>Category list</h2>
+            <h2>Create an new article</h2>
         </div>
         <div class="row">
             <div class="col-12">
